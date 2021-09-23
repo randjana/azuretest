@@ -15,16 +15,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         logging.info("after collection")
         result = collection.find({})
         print("result"+result)
-        logging.info("after find")
         
         print("----------result--------")
-        result = json.dumps(result)
-        print("result"+result)
-        logging.info("after dumps")
-        #result = collection.find({})
-        
-        #result = dumps(result)
-        
+        result = dumps(result)
         return func.HttpResponse(result, mimetype="application/json", charset='utf-8')
     except:
         print("could not connect to mongodb")
