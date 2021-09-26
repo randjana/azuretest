@@ -23,12 +23,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         result = collection.find({})
         logging.info(result)
         result = dumps(result)
-        with open('/tmp/collection.json', 'w') as file:
-            file.write('[')
-            for document in cursor:
-                file.write(dumps(document))
-                file.write(',')
-            file.write(']')
+        
 
         logging.info('Posts dump')
         return func.HttpResponse(result, mimetype="application/json", charset='utf-8', status_code=200)

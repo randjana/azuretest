@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap
 import settings
 import requests
 import json
-from feedgen.feed import FeedGenerator
+#from feedgen.feed import FeedGenerator
 from flask import make_response
 from urllib.parse import urljoin
 from werkzeug.contrib.atom import AtomFeed
